@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
 const features = [
-    ["userGuide", "autoScales", "TableStatistics"],
+    ["userGuide", "autoScales", "TableStatistics","scaleXDiv","scaleYDiv","radiusDiv","heightDiv","widthDiv","Formular","rho","rRhoAccuracy"],
     ['uniform',
         'normal',
-        'poisson'],
+        'poisson', 'geometric', 'exponential', 'gamma', 'beta','bernoulli','binomial','hypergeometric', 'negativeBinomial','chiSquared','snedecorF','studentT'],
 ];
 
 const RegressionSelector = ({ selectedMode, selectedFeature, setSelectedFeature }) => {

@@ -248,7 +248,7 @@ https://cdn.jsdelivr.net/npm/mathjs@13.0.0/lib/browser/math.min.js
             const quantileSlider = document.createElement('input');
             const quantileLabel = document.createElement('label');
             quantileLabel.textContent = 'Quantile: ';
-            controlPanel.appendChild(quantileLabel);
+            //controlPanel.appendChild(quantileLabel);
             quantileSlider.type = 'range';
             quantileSlider.min = 0.1;
             quantileSlider.max = 0.9;
@@ -274,7 +274,7 @@ https://cdn.jsdelivr.net/npm/mathjs@13.0.0/lib/browser/math.min.js
                 }
                 updateChart();
             })
-            controlPanel.appendChild(quantileSlider);
+            //controlPanel.appendChild(quantileSlider);
             quantileNumber.addEventListener('change', function () {
                 graph.quantile = parseFloat(this.value);
                 quantile = graph.quantile;
@@ -289,7 +289,7 @@ https://cdn.jsdelivr.net/npm/mathjs@13.0.0/lib/browser/math.min.js
                 }
                 updateChart();
             })
-            controlPanel.appendChild(quantileNumber);
+            //controlPanel.appendChild(quantileNumber);
 
             //checkbox for shaded area
             const shadedAreaCheckbox = document.createElement('input');
@@ -299,12 +299,12 @@ https://cdn.jsdelivr.net/npm/mathjs@13.0.0/lib/browser/math.min.js
                 graph.showShadedArea = this.checked;
                 updateChart();
             })
-            controlPanel.appendChild(shadedAreaCheckbox);
+            //controlPanel.appendChild(shadedAreaCheckbox);
 
             //label for x location output
             const quantileOutputLabel = document.createElement('label');
             quantileOutputLabel.textContent = 'x: ';
-            controlPanel.appendChild(quantileOutputLabel);
+            //controlPanel.appendChild(quantileOutputLabel);
 
 
             //input and also output for calculated quantile location eg. x = 0.5
@@ -323,7 +323,7 @@ https://cdn.jsdelivr.net/npm/mathjs@13.0.0/lib/browser/math.min.js
                 quantileNumber.value = graph.quantile;
                 updateChart();
             })
-            controlPanel.appendChild(quantileOutput);
+            //controlPanel.appendChild(quantileOutput);
             // document.getElementById('output').value = graph.xPosition;
             //input color
             const colorInput = document.createElement('input');
@@ -1048,7 +1048,7 @@ if (selected.includes('hypergeometric')) {
             quantilePosition = percent * numPoints;
 
             //write the output calculated quantile value
-            document.getElementById(\`output\${graphs.indexOf(graph)}\`).value = graph.xPosition.toFixed(2);
+            //document.getElementById(\`output\${graphs.indexOf(graph)}\`).value = graph.xPosition.toFixed(2);
 
             //prepare the data for the quantile line by changing the d array
             const quantileData = [];
