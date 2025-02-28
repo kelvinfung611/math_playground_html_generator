@@ -1,9 +1,9 @@
 import React from 'react';
 
-const HtmlGenerator = ({selectedFeature, mode}) => {
-
+const HtmlGenerator = ({ selectedFeature, mode }) => {
+    var html = ""
     const generateHtml = () => {
-        var html = `
+        html = `
 <!DOCTYPE html>
 <html>
 <title>Distribution Playground</title>
@@ -388,8 +388,8 @@ https://cdn.jsdelivr.net/npm/mathjs@13.0.0/lib/browser/math.min.js
 
 
             selected = [${//print out the selected distribution
-    selectedFeature.map(d => `'${d}'`).join(', ')
-                }]
+            selectedFeature.map(d => `'${d}'`).join(', ')
+            }]
             if (selected.includes('beta')) {
     distributionSelect.appendChild(betaOption);
 }
@@ -1226,7 +1226,7 @@ if (selected.includes('hypergeometric')) {
 
 </html>
 `;
-        if(mode !== "Distribution Playground"){
+        if (mode !== "Distribution Playground") {
             html = `<!DOCTYPE html>
 
 <html>
@@ -1489,8 +1489,8 @@ if (selected.includes('hypergeometric')) {
         let showMeanPIsOnCanvas = false;
 
         let selected = [${//print out the selected distribution
-            selectedFeature.map(d => `'${d}'`).join(', ')
-                        }]
+                selectedFeature.map(d => `'${d}'`).join(', ')
+                }]
         const defaultDatasets ={
             "1": [
             [
@@ -3241,9 +3241,16 @@ if (selected.includes('hypergeometric')) {
         a.href = url;
         a.download = 'index.html';
         a.click();
+        navigator.clipboard.writeText(html);
+        //prompt that u have already copied the html code
+        alert("HTML code has been copied to your clipboard. You can paste it to your HTML file.");
     };
+
+
     return (
-        <button onClick={generateHtml}>Generate HTML</button>
+        <div>
+            <button onClick={generateHtml}>Generate HTML</button>
+        </div>
     );
 }
 
